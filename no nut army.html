@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Nut Army</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Enable smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Container -->
+    <header>
+        <div class="hero">
+            <img src="images/image1.webp" alt="No Nut Army Battle" class="hero-image">
+            <div class="hero-text">
+                <h1>Join the No Nut Army</h1>
+                <p>Victory over temptation starts here.</p>
+                <!-- Enlist Now button -->
+                <a href="#join" class="cta-button">Enlist Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>The Battle Begins</h2>
+        <p>In the war against temptation, the No Nut Army stands firm. Will you fight alongside us?</p>
+    </section>
+
+    <!-- Join Section -->
+    <section id="join">
+        <h2>Ready to Enlist?</h2>
+        <p>Join the fight against urges. Together, we will stand strong. Enlist today and earn your victory!</p>
+        <form id="joinForm">
+            <input type="text" id="userName" placeholder="Your Name" required>
+            <input type="email" id="userEmail" placeholder="Your Email" required>
+            <button type="submit" class="cta-button">Join the Army</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 No Nut Army | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        document.getElementById('joinForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Retrieve user inputs
+            const userName = document.getElementById('userName').value;
+            const userEmail = document.getElementById('userEmail').value;
+
+            // Generate a random 6-character alphanumeric passcode
+            const passcode = Math.random().toString(36).substring(2, 8);
+
+            // Redirect to password.html with the user's details and passcode as URL parameters
+            window.location.href = `password.html?name=${encodeURIComponent(userName)}&email=${encodeURIComponent(userEmail)}&passcode=${encodeURIComponent(passcode)}`;
+        });
+    </script>
+</body>
+</html>
